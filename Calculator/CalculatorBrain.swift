@@ -10,9 +10,23 @@ import Foundation
 
 struct CalculatorBrain {
     
+    // private?
     private var accumulator: Double?
     
-    func performOperation(_ symbol: String) {
+    mutating func performOperation(_ symbol: String) {
+        switch symbol {
+        case "π":
+            //display.text = String(Double.pi)
+            accumulator = Double.pi
+        case "√":
+            if let operand = accumulator {
+                accumulator = sqrt(operand)
+            }
+            
+        default:
+            break
+        }
+        
         
     }
     
